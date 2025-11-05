@@ -1,0 +1,19 @@
+import { Component } from '@angular/core';
+import { MessageService } from '../message.service';
+import {HeroDetailComponent} from '../hero-detail/hero-detail.component';
+import {CommonModule} from '@angular/common';
+
+@Component({
+  selector: 'app-messages',
+  templateUrl: './messages.component.html',
+  styleUrls: ['./messages.component.css'],
+  imports: [
+
+    CommonModule
+  ],
+})
+export class MessagesComponent {
+
+  constructor(public messageService: MessageService) {}
+
+}

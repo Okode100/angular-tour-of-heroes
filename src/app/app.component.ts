@@ -1,12 +1,28 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {HeroesComponent} from './heroes/heroes.component';
+import {MessagesComponent} from './messages/messages.component';
+
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
   templateUrl: './app.component.html',
-  styleUrl: './app.component.css'
+  imports: [
+    HeroesComponent,
+    MessagesComponent
+  ],
+  styleUrls: ['./app.component.css']
 })
-export class AppComponent {
-  title = 'angular-tour-of-heroes';
+
+
+export default class AppComponent {
+  messages: string[] = [];
+  title:string= "Moses"
+
+  add(message: string) {
+    this.messages.push(message);
+  }
+
+  clear() {
+    this.messages = [];
+  }
 }
