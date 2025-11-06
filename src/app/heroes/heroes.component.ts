@@ -4,16 +4,20 @@ import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
 import {MessageService} from '../message.service';
 import {HeroDetailComponent} from '../hero-detail/hero-detail.component';
-import {CommandModule} from '@angular/cli/src/command-builder/command-module';
 import {CommonModule} from '@angular/common';
+import {RouterOutlet} from '@angular/router';
+import {MessagesComponent} from '../messages/messages.component';
+
 
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
   imports: [
-    HeroDetailComponent,
-    CommonModule
+    CommonModule,
+    RouterOutlet,
+    MessagesComponent
   ],
+  standalone: true,
   styleUrls: ['./heroes.component.css']
 })
 export class HeroesComponent implements OnInit {
@@ -37,4 +41,5 @@ export class HeroesComponent implements OnInit {
     this.heroService.getHeroes()
       .subscribe(heroes => this.heroes = heroes);
   }
+  title:string = 'Ware of heroes'
 }

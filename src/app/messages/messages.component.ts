@@ -11,6 +11,7 @@ import {CommonModule} from '@angular/common';
 
     CommonModule
   ],
+  standalone: true
 })
 export class MessagesComponent {
 
